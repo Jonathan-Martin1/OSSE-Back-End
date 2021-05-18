@@ -5,7 +5,7 @@ const methodNotAllowed = require('../errors/methodNotAllowed')
 router.route('/').get(controller.show).all(methodNotAllowed)
 
 router
-  .router('/:userId')
+  .route('/:userId')
   .post(controller.create)
   .put(controller.update)
   .delete(controller.destroy)
