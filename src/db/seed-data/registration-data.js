@@ -1,4 +1,4 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
 
 module.exports = [
   {
@@ -8,6 +8,5 @@ module.exports = [
     last_name: 'sagget',
     email: 'bobsagget69@gmail.com',
     password: 'xx01xx',
-    password_match: 'xx01xx',
   },
-]
+];
