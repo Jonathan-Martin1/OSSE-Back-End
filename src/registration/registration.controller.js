@@ -123,7 +123,8 @@ const read = async (req, res, next) => {
 };
 
 const isValid = (req, res, next) => {
-  if (!req.body.data) return next({ status: 400, message: 'isValid Error' });
+  if (!req.body.data) return;
+  next({ status: 400, message: 'isValid Error' });
   const {
     registration_id,
     username,
