@@ -1,8 +1,8 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
 
 module.exports = [
   {
-    player_id: 0,
+    player_id: '',
     total_points: {},
     total_building: {},
     total_resources: {},
@@ -11,4 +11,4 @@ module.exports = [
     total_ship: 0,
     total_research: {},
   },
-]
+];

@@ -1,7 +1,8 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
+
 module.exports = [
   {
-    ships_id: 0,
+    ships_id: '',
     ship_s: {
       1: {
         ship_name: 'Small Cargo',
@@ -540,4 +541,4 @@ A recent development in shield technologies efficiently bypassed this issue. A n
       },
     },
   },
-]
+];

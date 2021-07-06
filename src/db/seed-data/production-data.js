@@ -1,8 +1,8 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
 
 module.exports = [
   {
-    production_id: 0,
+    production_id: '',
     robotics_factory_description:
       'The Robotics Factory primary goal is the production of State of the Art construction robots. Each upgrade to the robotics factory results in the production of faster robots, which is used to reduce the time needed to construct buildings.',
     robotics_factory_costs_per_upgrade: {
@@ -227,4 +227,4 @@ module.exports = [
       },
     },
   },
-]
+];

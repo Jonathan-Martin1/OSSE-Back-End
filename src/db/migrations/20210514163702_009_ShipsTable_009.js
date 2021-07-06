@@ -1,23 +1,23 @@
 exports.up = function (knex) {
   return knex.schema.createTable('ships', (table) => {
-    table.increments('ships_id').primary()
-    table.json('ship_s')
-    table.integer('amount_of_ships')
-    table.integer('user_id')
+    table.string('ships_id').primary();
+    table.json('ship_s');
+    table.integer('amount_of_ships');
+    table.string('user_id');
     table
       .foreign('user_id')
       .references('user_id')
       .inTable('users')
-      .onDelete('cascade')
-    table.integer('planet_id')
+      .onDelete('cascade');
+    table.string('planet_id');
     table
       .foreign('planet_id')
       .references('planet_id')
       .inTable('planet_list')
-      .onDelete('cascade')
-  })
-}
+      .onDelete('cascade');
+  });
+};
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('ships')
-}
+  return knex.schema.dropTable('ships');
+};

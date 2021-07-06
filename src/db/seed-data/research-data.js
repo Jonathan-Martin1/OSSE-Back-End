@@ -1,8 +1,8 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
 
 module.exports = [
   {
-    research_id: 0,
+    research_id: '',
     astrophysics_description:
       'Further findings in the field of astrophysics allow for the construction of laboratories that can be fitted on more and more ships. This makes long expeditions far into unexplored areas of space possible. In addition these advancements can be used to further colonise the universe. For every two levels of this technology an additional planet can be made usable.',
     astrophysics_costs_per_upgrade: {
@@ -415,4 +415,4 @@ module.exports = [
       },
     },
   },
-]
+];

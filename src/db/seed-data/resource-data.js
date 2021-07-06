@@ -1,7 +1,8 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
+
 module.exports = [
   {
-    resources_id: 0,
+    resources_id: '',
     base_resources: {
       metal: 1000,
       crystal: 500,
@@ -12,4 +13,4 @@ module.exports = [
       crystal: 500,
     },
   },
-]
+];

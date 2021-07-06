@@ -2,7 +2,7 @@ const nextId = require('../../utils/nextId');
 
 module.exports = [
   {
-    registration_id: 0,
+    registration_id: '',
     username: 'testbot',
     first_name: 'bob',
     last_name: 'sagget',

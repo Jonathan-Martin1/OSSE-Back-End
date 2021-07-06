@@ -1,7 +1,8 @@
-const nextId = require('../../utils/nextId')
+const nextId = require('../../utils/nextId');
+
 module.exports = [
   {
-    defenses_id: 0,
+    defenses_id: '',
     defense: {
       1: {
         defense_name: 'Rocket Launcher',
@@ -213,4 +214,4 @@ module.exports = [
       },
     },
   },
-]
+];

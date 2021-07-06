@@ -1,99 +1,99 @@
 exports.up = function (knex) {
   return knex.schema.createTable('Overview', (table) => {
-    table.uuid('overview_id').primary()
-    table.integer('leaderboard_id')
+    table.string('overview_id').primary();
+    table.string('leaderboard_id');
     table
       .foreign('leaderboard_id')
       .references('leaderboard_id')
       .inTable('leaderboard')
-      .onDelete('cascade')
-    table.integer('galexy_view_id')
+      .onDelete('cascade');
+    table.string('galexy_view_id');
     table
       .foreign('galexy_view_id')
       .references('galexy_view_id')
       .inTable('galexy_view')
-      .onDelete('cascade')
-    table.integer('user_id')
+      .onDelete('cascade');
+    table.string('user_id');
     table
       .foreign('user_id')
       .references('user_id')
       .inTable('users')
-      .onDelete('cascade')
-    table.integer('ships_id')
+      .onDelete('cascade');
+    table.string('ships_id');
     table
       .foreign('ships_id')
       .references('ships_id')
       .inTable('ships')
-      .onDelete('cascade')
-    table.integer('defenses_id')
+      .onDelete('cascade');
+    table.string('defenses_id');
     table
       .foreign('defenses_id')
       .references('defenses_id')
       .inTable('defenses')
-      .onDelete('cascade')
-    table.integer('player_id')
+      .onDelete('cascade');
+    table.string('player_id');
     table
       .foreign('player_id')
       .references('player_id')
       .inTable('player_stats')
-      .onDelete('cascade')
-    table.integer('registration_id')
+      .onDelete('cascade');
+    table.string('registration_id');
     table
       .foreign('registration_id')
       .references('registration_id')
       .inTable('registration')
-      .onDelete('cascade')
-    table.integer('planet_id')
+      .onDelete('cascade');
+    table.string('planet_id');
     table
       .foreign('planet_id')
       .references('planet_id')
       .inTable('planet_list')
-      .onDelete('cascade')
-    table.integer('buildings_id')
+      .onDelete('cascade');
+    table.string('buildings_id');
     table
       .foreign('buildings_id')
       .references('buildings_id')
       .inTable('buildings')
-      .onDelete('cascade')
-    table.integer('production_id')
+      .onDelete('cascade');
+    table.string('production_id');
     table
       .foreign('production_id')
       .references('production_id')
       .inTable('production')
-      .onDelete('cascade')
-    table.integer('research_id')
+      .onDelete('cascade');
+    table.string('research_id');
     table
       .foreign('research_id')
       .references('research_id')
       .inTable('research')
-      .onDelete('cascade')
-    table.integer('player_fleet_id')
+      .onDelete('cascade');
+    table.string('player_fleet_id');
     table
       .foreign('player_fleet_id')
       .references('player_fleet_id')
       .inTable('playerFleet')
-      .onDelete('cascade')
-    table.integer('player_defense_id')
+      .onDelete('cascade');
+    table.string('player_defense_id');
     table
       .foreign('player_defense_id')
       .references('player_defense_id')
       .inTable('playerDefense')
-      .onDelete('cascade')
-    table.integer('store_id')
+      .onDelete('cascade');
+    table.string('store_id');
     table
       .foreign('store_id')
       .references('store_id')
       .inTable('store')
-      .onDelete('cascade')
-    table.integer('alliance_id')
+      .onDelete('cascade');
+    table.string('alliance_id');
     table
       .foreign('alliance_id')
       .references('alliance_id')
       .inTable('alliance')
-      .onDelete('cascade')
-  })
-}
+      .onDelete('cascade');
+  });
+};
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('Overview')
-}
+  return knex.schema.dropTable('Overview');
+};
