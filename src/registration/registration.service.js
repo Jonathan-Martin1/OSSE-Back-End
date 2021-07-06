@@ -1,15 +1,15 @@
-const knex = require('../db/connection')
+const knex = require('../db/connection');
 
 const listFleetsById = (knex, registrationId) =>
-  knex('registration as r').where({ 'r.registration_id': registrationId })
+  knex('registration as r').where({ 'r.registration_id': registrationId });
 
 const list = () => {
-  return knex('registration').select('*').orderBy('registration_id')
-}
+  return knex('registration').select('*').orderBy('registration_id');
+};
 
 const show = () => {
-  return knex('registration').select('*')
-}
+  return knex('registration').select('*');
+};
 
 const read = (
   registration_id,
@@ -17,8 +17,8 @@ const read = (
   first_name,
   last_name,
   email,
-  password,
-  password_match
+  password
+  // password_match
 ) => {
   return knex('registration')
     .select('*')
@@ -30,29 +30,21 @@ const read = (
       { email: email },
       { password: password },
       { password_match: password_match }
-    )
-}
+    );
+};
 
-const create = (
-  registration_id,
-  username,
-  first_name,
-  last_name,
-  email,
-  password,
-  password_match
-) => {
+const create = () => {
+  console.log('registration create invoked');
   return knex('registration').insert(
-    registration_id,
-    username,
-    first_name,
-    last_name,
-    email,
-    password,
-    password_match,
-    '*'
-  )
-}
+    { registration_id: registration_id },
+    { username: username },
+    { first_name: first_name },
+    { last_name: last_name },
+    { email: email },
+    { password: password },
+    { password_match: password_match }
+  );
+};
 
 const update = (
   username,
@@ -64,17 +56,17 @@ const update = (
   updatedRegistration
 ) => {
   return knex('registration')
-    .where(
+    .where([
       { username: username },
       { first_name: first_name },
       { last_name: last_name },
       { email: email },
       { password: password },
-      { password_match: password_match }
-    )
+      { password_match: password_match },
+    ])
     .update(updatedRegistration)
-    .returning('*')
-}
+    .returning('*');
+};
 
 const destroy = (
   registration_id,
@@ -96,8 +88,8 @@ const destroy = (
       password,
       password_match
     )
-    .returning('*')
-}
+    .returning('*');
+};
 
 module.exports = {
   list,
@@ -107,4 +99,4 @@ module.exports = {
   listFleetsById,
   update,
   destroy,
-}
+};
