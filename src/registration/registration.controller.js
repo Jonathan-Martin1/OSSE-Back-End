@@ -107,9 +107,9 @@ const update = async (req, res, next) => {
 };
 
 const create = async (req, res, next) => {
-  const newRegistration = res.locals.validRegistration;
-  const newRes = await service.create(newRegistration);
-  res.status(201).json({ data: newRes[0] });
+  const newRegistration = req.body.data;
+  const registration = await service.create(newRegistration);
+  res.status(201).json({ data: registration[0] });
 };
 
 const show = async (req, res, next) => {
@@ -148,7 +148,6 @@ const isValid = (req, res, next) => {
       return next({ status: 400, message: `Invalid input for ${field}` });
     }
   }
-  res.locals.validRegistration = req.body.data;
   next();
 };
 
