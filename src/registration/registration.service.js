@@ -33,26 +33,8 @@ const read = (
     );
 };
 
-const create = (
-  registration_id,
-  username,
-  first_name,
-  last_name,
-  email,
-  password,
-  password_match
-) => {
-  return knex('registration').insert([
-    {
-      registration_id: registration_id,
-      username: username,
-      first_name: first_name,
-      last_name: last_name,
-      email: email,
-      password: password,
-      password_match: password_match,
-    },
-  ]);
+const create = (body) => {
+  return knex('registration').insert(body, '*');
 };
 
 const update = (
