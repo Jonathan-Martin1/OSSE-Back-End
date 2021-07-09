@@ -34,7 +34,6 @@ const read = (
 };
 
 const create = (newRegistration) => {
-  console.log('Data made it to the service', newRegistration);
   return knex('registration').insert(newRegistration, '*');
 };
 

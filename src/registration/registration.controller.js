@@ -3,7 +3,6 @@ const wrapper = require('../errors/asyncErrorBoundary');
 
 const isValid = (req, res, next) => {
   if (!req.body) return;
-  console.log('body data after hits API =', req.body.data);
   const { registration_id, username, first_name, last_name, email, password } =
     req.body.data;
   const requiredFields = [
@@ -130,7 +129,6 @@ const update = async (req, res, next) => {
 
 const create = async (req, res, next) => {
   const newRegistration = res.locals.validRegistration;
-  console.log('registration validated', newRegistration);
   const newRes = await service.create(newRegistration);
   res.status(201).json({ data: newRes[0] });
 };
