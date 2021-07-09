@@ -1,6 +1,28 @@
 const service = require('./registration.service');
 const wrapper = require('../errors/asyncErrorBoundary');
 
+const isValid = (req, res, next) => {
+  if (!req.body) return;
+  console.log('body data after hits API =', req.body.data);
+  const { registration_id, username, first_name, last_name, email, password } =
+    req.body.data;
+  const requiredFields = [
+    'registration_id',
+    'username',
+    'first_name',
+    'last_name',
+    'email',
+    'password',
+  ];
+  for (const field of requiredFields) {
+    if (!req.body.data[field]) {
+      return next({ status: 400, message: `Invalid input for ${field}` });
+    }
+  }
+  res.locals.validRegistration = req.body.data;
+  next();
+};
+
 const list = async (req, res, next) => {
   const { username, first_name, last_name, email, password, password_match } =
     req.query;
@@ -107,10 +129,10 @@ const update = async (req, res, next) => {
 };
 
 const create = async (req, res, next) => {
-  console.log('bob', req);
-  const newRegistration = req.body.data;
-  const registrationForm = await service.create(newRegistration);
-  res.status(201).json({ data: registrationForm[0] });
+  const newRegistration = res.locals.validRegistration;
+  console.log('registration validated', newRegistration);
+  const newRes = await service.create(newRegistration);
+  res.status(201).json({ data: newRes[0] });
 };
 
 const show = async (req, res, next) => {
@@ -121,38 +143,6 @@ const show = async (req, res, next) => {
 const read = async (req, res, next) => {
   const registrations = res.locals.registration_id;
   res.status(200).json({ data: registration_id[0] });
-};
-
-const isValid = (req, res, next) => {
-  if (!req.body.data) {
-    return;
-  }
-  next({ status: 400, message: 'isValid Error, No body data sent!' });
-
-  const {
-    registration_id,
-    username,
-    first_name,
-    last_name,
-    email,
-    password,
-    password_match,
-  } = req.body.data;
-  const requiredFields = [
-    'registration_id',
-    'username',
-    'first_name',
-    'last_name',
-    'email',
-    'password',
-    'password_match',
-  ];
-  for (const field of requiredFields) {
-    if (!req.body.data[field]) {
-      return next({ status: 400, message: `Invalid input for ${field}` });
-    }
-  }
-  next();
 };
 
 const destroy = async (req, res) => {
@@ -185,7 +175,7 @@ module.exports = {
     wrapper(registrationExists),
     wrapper(read),
   ],
-  create: [isValid, create],
+  create: [wrapper(isValid), wrapper(create)],
   update: [wrapper(isValid), wrapper(registrationExists), wrapper(update)],
   destroy: [wrapper(destroy)],
 };

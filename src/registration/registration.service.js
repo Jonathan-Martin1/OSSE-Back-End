@@ -33,8 +33,9 @@ const read = (
     );
 };
 
-const create = (body) => {
-  return knex('registration').insert(body, '*');
+const create = (newRegistration) => {
+  console.log('Data made it to the service', newRegistration);
+  return knex('registration').insert(newRegistration, '*');
 };
 
 const update = (
