@@ -107,9 +107,10 @@ const update = async (req, res, next) => {
 };
 
 const create = async (req, res, next) => {
+  console.log('bob', req);
   const newRegistration = req.body.data;
-  const registration = await service.create(newRegistration);
-  res.status(201).json({ data: registration[0] });
+  const registrationForm = await service.create(newRegistration);
+  res.status(201).json({ data: registrationForm[0] });
 };
 
 const show = async (req, res, next) => {
@@ -123,8 +124,11 @@ const read = async (req, res, next) => {
 };
 
 const isValid = (req, res, next) => {
-  if (!req.body.data) return;
-  next({ status: 400, message: 'isValid Error' });
+  if (!req.body.data) {
+    return;
+  }
+  next({ status: 400, message: 'isValid Error, No body data sent!' });
+
   const {
     registration_id,
     username,
@@ -181,7 +185,7 @@ module.exports = {
     wrapper(registrationExists),
     wrapper(read),
   ],
-  create: [wrapper(isValid), wrapper(create)],
+  create: [isValid, create],
   update: [wrapper(isValid), wrapper(registrationExists), wrapper(update)],
   destroy: [wrapper(destroy)],
 };
