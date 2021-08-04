@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('users', (table) => {
     table.string('user_id').primary();
-    table.boolean('is_logged_in');
+    table.boolean('is_logged_in').default(false);
     table.string('user_name');
     table.string('registration_id');
     table

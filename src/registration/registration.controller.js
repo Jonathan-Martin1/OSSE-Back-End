@@ -13,6 +13,9 @@ const isValid = (req, res, next) => {
     'email',
     'password',
   ];
+  if (res.locals.email === email) {
+    throw new Error(`An Account with this email is already in use`);
+  }
   for (const field of requiredFields) {
     if (!req.body.data[field]) {
       return next({ status: 400, message: `Invalid input for ${field}` });
