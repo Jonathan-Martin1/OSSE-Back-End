@@ -8,9 +8,11 @@ module.exports = [
       crystal: 500,
     },
     planet_list_with_resources: {
-      planet_id: 0,
+      planet: {
+      id: 0,
       metal: 1000,
       crystal: 500,
+      }
     },
   },
 ];

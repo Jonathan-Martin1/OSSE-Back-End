@@ -9,8 +9,7 @@ exports.up = function (knex) {
     table.timestamp('created_at').defaultTo(knex.fn.now());
   });
 };
-// validation for email
-// password check
+
 exports.down = function (knex) {
   return knex.schema.dropTable('registration');
 };

@@ -1,12 +1,7 @@
 exports.up = function (knex) {
-  return knex.schema.createTable('leaderboard', (table) => {
-    table.string('leaderboard_id').primary();
-    table.string('player_id');
-    table
-      .foreign('player_id')
-      .references('player_id')
-      .inTable('player_stats')
-      .onDelete('cascade');
+  return knex.schema.createTable('playerFleet', (table) => {
+    table.string('player_fleet_id').primary();
+    table.json('ships_stats');
     table.string('user_id');
     table
       .foreign('user_id')
@@ -23,5 +18,5 @@ exports.up = function (knex) {
 };
 
 exports.down = function (knex) {
-  return knex.schema.dropTable('leaderboard');
+  return knex.schema.dropTable('playerFleet');
 };

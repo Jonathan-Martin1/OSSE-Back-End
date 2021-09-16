@@ -1,8 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('playerDefense', (table) => {
     table.string('player_defense_id').primary();
-    table.string('defenses_name');
-    table.integer('amount_of_defenses');
+    table.json('defenses');
     table.string('user_id');
     table
       .foreign('user_id')

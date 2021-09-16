@@ -13,12 +13,8 @@ exports.up = function (knex) {
       .references('user_id')
       .inTable('users')
       .onDelete('cascade');
-    table.string('subscriptions');
-    table.text('subscription_details');
-    table.string('subscription_price');
-    table.string('boosters');
-    table.text('booster_details');
-    table.string('booster_price');
+    table.json('subscriptions_details_price');
+    table.json('boosters_details_price');
   });
 };
 
