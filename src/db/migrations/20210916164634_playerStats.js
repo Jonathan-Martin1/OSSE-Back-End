@@ -1,13 +1,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable('player_stats', (table) => {
     table.string('player_id').primary();
-    table.json('total_points');
-    table.json('total_building');
-    table.json('total_resources');
+    table.integer('total_points');
     table.json('total_resources_for_each_planet');
-    table.integer('total_defense');
-    table.integer('total_ship');
-    table.json('total_research');
     table.string('user_id');
     table
       .foreign('user_id')

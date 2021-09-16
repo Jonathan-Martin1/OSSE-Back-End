@@ -213,5 +213,47 @@ module.exports = [
         defense_description: `Interplanetary Missiles (IPM) are your offensive weapon to destroy the defences of your target. Using state of the art tracking technology, each missile targets a certain number of defences for destruction. Tipped with an anti-matter bomb, they deliver a destructive force so severe that destroyed shields and defences cannot be repaired. The only way to counter these missiles is with ABMs.`,
       },
     },
+    amount_of_defenses: {
+      1: {
+        defense_name: 'Rocket Launcher',
+        defense_amount: 0,
+      },
+      2: {
+        defense_name: 'Light Laser',
+        defense_amount: 0,
+      },
+      3: {
+        defense_name: 'Heavy Laser',
+        defense_amount: 0,
+      },
+      4: {
+        defense_name: 'Gauss Cannon',
+        defense_amount: 0,
+      },
+      5: {
+        defense_name: 'Ion Cannon',
+        defense_amount: 0,
+      },
+      6: {
+        defense_name: 'Plasma Turret',
+        defense_amount: 0,
+      },
+      7: {
+        defense_name: 'Small Shield Dome',
+        defense_amount: 0,
+      },
+      8: {
+        defense_name: 'Large Shield Dome',
+        defense_amount: 0,
+      },
+      9: {
+        defense_name: 'Anti-Ballistic Missiles',
+        defense_amount: 0,
+      },
+      10: {
+        defense_name: 'Interplanetary Missiles',
+        defense_amount: 0,
+      },
+    }
   },
 ];

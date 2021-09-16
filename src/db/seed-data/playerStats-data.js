@@ -3,12 +3,14 @@ const nextId = require('../../utils/nextId');
 module.exports = [
   {
     player_id: '',
-    total_points: {},
-    total_building: {},
-    total_resources: {},
-    total_resources_for_each_planet: {},
-    total_defense: 0,
-    total_ship: 0,
-    total_research: {},
+    total_points: 0,
+    total_resources_for_each_planet: {
+      1: {
+        planet_id: '',
+        metal: 0,
+        crystal: 0,
+        deuterium: 0,
+      },
+    },
   },
 ];

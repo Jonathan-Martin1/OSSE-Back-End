@@ -540,5 +540,63 @@ A recent development in shield technologies efficiently bypassed this issue. A n
           'The Deathstar is the most powerful ship ever created. This moon sized ship is the only ship that can be seen with the naked eye on the ground. By the time you spot it, unfortunately, it is too late to do anything. Armed with a gigantic graviton cannon, the most advanced weapons system ever created in the Universe, this massive ship has not only the capability of destroying entire fleets and defences, but also has the capability of destroying entire moons. Only the most advanced empires have the capability to build a ship of this mammoth size.',
       },
     },
+    amount_of_ships: {
+      1: {
+      ship_name: 'Small Cargo',
+      ship_amount: 0,
+      },
+      2: {
+      ship_name: 'Large Cargo',
+      ship_amount: 0,
+      },
+      3: {
+      ship_name: 'Colony Ship',
+      ship_amount: 0,
+      },
+      4: {
+      ship_name: 'Recycler',
+      ship_amount: 0,
+      },
+      5: {
+      ship_name: 'Espionage Probe',
+      ship_amount: 0,
+      },
+      6: {
+      ship_name: 'Solar Satellite',
+      ship_amount: 0,
+      },
+      7: {
+      ship_name: 'Light Fighter',
+      ship_amount: 0,
+      },
+      8: {
+      ship_name: 'Heavy Fighter',
+      ship_amount: 0,
+      },
+      9: {
+      ship_name: 'Cruiser',
+      ship_amount: 0,
+      },
+      10: {
+      ship_name: 'Battleship',
+      ship_amount: 0,
+      },
+      11: {
+      ship_name: 'Battlecruiser',
+      ship_amount: 0,
+      },
+      12: {
+      ship_name: 'Bomber',
+      ship_amount: 0,
+      },
+      13: {
+      ship_name: 'Destroyer',
+      ship_amount: 0,
+      },
+      14: {
+      ship_name: 'Death Star',
+      ship_amount: 0,
+      },
+    },
   },
 ];
