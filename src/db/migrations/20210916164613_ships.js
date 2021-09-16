@@ -2,7 +2,6 @@ exports.up = function (knex) {
   return knex.schema.createTable('ships', (table) => {
     table.string('ships_id').primary();
     table.json('ship_s');
-    table.integer('amount_of_ships');
     table.string('user_id');
     table
       .foreign('user_id')
