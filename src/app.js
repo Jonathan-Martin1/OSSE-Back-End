@@ -28,7 +28,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/login', loginRouter)
-app.use('/overview', overviewRouter)
+app.use('/overview', overviewRouter) // Throws error type: service.list is not a function in overview.controller.js:8:21
 app.use('/mines', minesRouter)
 app.use('/production', productionRouter)
 app.use('/shipyard', shipyardRouter)
@@ -41,7 +41,7 @@ app.use('/reviews', reviewsRouter)
 app.use('/alliance', allianceRouter)
 app.use('/store', storeRouter)
 app.use('/registration', registrationRouter)
-app.use('/leaderboard', leaderBoardRouter)
+app.use('/leaderboard', leaderBoardRouter) // TODO: endless loop
 
 app.use(notFound)
 
