@@ -5,7 +5,7 @@ const cors = require('cors')
 const errorHandler = require('./errors/errorHandler')
 const notFound = require('./errors/notFound')
 
-const loginRouter = require('./login/login.router')
+const usersRouter = require('./users/users.router')
 const overviewRouter = require('./overview/overview.router')
 const resourcesRouter = require('./resources/resources.router')
 const productionRouter = require('./production/production.router')
@@ -27,7 +27,7 @@ app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
 
-app.use('/login', loginRouter)
+app.use('/user', usersRouter)
 app.use('/overview', overviewRouter) // Throws error type: service.list is not a function in overview.controller.js:8:21
 app.use('/mines', minesRouter)
 app.use('/production', productionRouter)

@@ -1,4 +1,4 @@
-const service = require('./login.service')
+const service = require('./users.service')
 const wrapper = require('../errors/asyncErrorBoundary')
 
 const list = async (req, res, next) => {
